@@ -72,6 +72,7 @@ def _generate_json_schemas():
 
 
 def do_setup():
+    _generate_json_schemas()
     setup(
         author='CERN',
         author_email='admin@inspirehep.net',
@@ -93,7 +94,7 @@ def do_setup():
         zip_safe=False,
         autosemver=True,
     )
-    _generate_json_schemas()
+
 
 if __name__ == '__main__':
     do_setup()

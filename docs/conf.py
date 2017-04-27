@@ -29,6 +29,19 @@ import os
 from shutil import copy2
 
 from autosemver.packaging import get_changelog, get_current_version
+from jsonschema2rst.parser_runner import run_parser
+
+
+def _generate_schemas_doc():
+    schemas_folder = os.path.join(
+        os.pardir,
+        'inspire_schemas'
+    )
+    rst_output = 'documentation'
+    run_parser(schemas_folder, rst_output)
+
+
+_generate_schemas_doc()
 
 from jsonschema2rst.parser_runner import run_parser
 
